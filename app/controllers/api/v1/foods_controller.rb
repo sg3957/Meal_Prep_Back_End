@@ -1,7 +1,7 @@
 class Api::V1::FoodsController < ApplicationController
   before_action :find_food, only: [:update]
   def index
-    @day = Day.find(params[:day_id])
+    @mealtime = Mealtime.find(params[:day_id])
     @foods = @day.foods
     render json: @foods
   end

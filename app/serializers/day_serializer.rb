@@ -1,5 +1,5 @@
 class DaySerializer < ActiveModel::Serializer
-  attributes :id, :name, :foods
+  attributes :id, :name, :mealtimes
 
-  has_many :foods
+  has_many :mealtimes
 end
