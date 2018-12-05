@@ -1,5 +1,5 @@
 class Api::V1::FoodsController < ApplicationController
-  before_action :find_food, only: [:update]
+  before_action :find_food, only: [:update, :destroy]
   def index
     @mealtime = Mealtime.find(params[:day_id])
     @foods = @day.foods
@@ -31,6 +31,11 @@ class Api::V1::FoodsController < ApplicationController
     else
       render json: { errors: @food.errors.full_messages }, status: :unprocessible_entity
     end
+  end
+
+  def destroy
+    @food.destroy
+    render json: {message: "food deleted"}, status: :ok
   end
 
   private
