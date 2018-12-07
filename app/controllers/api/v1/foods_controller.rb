@@ -41,7 +41,7 @@ class Api::V1::FoodsController < ApplicationController
   private
 
   def food_params
-    params.permit(:name, :day_id)
+    params.permit(:name, :calories, :mealtime_id)
   end
 
   def find_food
